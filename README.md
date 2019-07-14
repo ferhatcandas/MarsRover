@@ -1,5 +1,5 @@
-# MarsRover
-
+# Mars Rover
+Mars Rover problem, using the Command Design Pattern.
 
 ## Introduction 
 
