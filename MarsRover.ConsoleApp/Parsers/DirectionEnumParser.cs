@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarsRover.ConsoleApp.Parser
+namespace MarsRover.ConsoleApp.Parsers
 {
     public static class DirectionEnumParser
     {
