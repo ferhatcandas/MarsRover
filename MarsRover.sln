@@ -7,9 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A35176DB-DEE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F36048AD-B350-4CC2-AFB5-7441DFBD8895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.ConsoleApp", "MarsRover.ConsoleApp\MarsRover.ConsoleApp.csproj", "{0C6368D7-3FB2-4A6F-AB82-351D9F7C0E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.ConsoleApp", "MarsRover.ConsoleApp\MarsRover.ConsoleApp.csproj", "{0C6368D7-3FB2-4A6F-AB82-351D9F7C0E33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.ConsoleApp.Tests", "MarsRover.ConsoleApp.Tests\MarsRover.ConsoleApp.Tests.csproj", "{FE5E8BA6-EB8D-4D59-AA21-27A8D5827C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.ConsoleApp.Tests", "MarsRover.ConsoleApp.Tests\MarsRover.ConsoleApp.Tests.csproj", "{FE5E8BA6-EB8D-4D59-AA21-27A8D5827C85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2566F291-C308-46AE-9D80-4CA47BD17688}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
