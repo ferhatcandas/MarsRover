@@ -13,10 +13,16 @@ namespace MarsRover.ConsoleApp.Models
             StepsizeOnXAxis = stepSizeOnXAxis;
             StepsizeOnYAxis = stepSizeOnYAxis;
         }
+        /// <summary>
+        /// step size to move x coordinate direction
+        /// </summary>
         public int StepsizeOnXAxis { get; private set; }
+        /// <summary>
+        /// step size to move y coordinate direction
+        /// </summary>
         public int StepsizeOnYAxis { get; private set; }
         public abstract DirectionEnum Right();
         public abstract DirectionEnum Left();
-        public string Rotation() => this.GetType().Name.FirstOrDefault().ToString();
+        public string Rotation() => this.GetType().Name.Substring(0, 1);
     }
 }

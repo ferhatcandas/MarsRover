@@ -8,7 +8,7 @@ namespace MarsRover.ConsoleApp.Directions
 {
     public class WestDirection : Direction
     {
-        public WestDirection() : base( -1, 0)
+        public WestDirection() : base(-1, 0)
         {
         }
 

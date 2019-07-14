@@ -22,7 +22,7 @@ namespace MarsRover.ConsoleApp.Parser
                 case DirectionEnum.West:
                     return new WestDirection();
                 default:
-                    throw new ArgumentException(nameof(directionEnum));
+                    throw new ArgumentOutOfRangeException(nameof(directionEnum));
             }
         }
     }
