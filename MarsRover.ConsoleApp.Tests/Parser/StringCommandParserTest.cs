@@ -11,71 +11,37 @@ namespace MarsRover.ConsoleApp.Tests.Parser
 {
     public class StringCommandParserTest
     {
-        [Fact]
-        public void String_LMapsTo_RotateLeftCommand()
+
+        [Theory]
+        [InlineData("L", typeof(RotateLeftCommand), 1)]
+        [InlineData("R", typeof(RotateRightCommand), 1)]
+        [InlineData("M", typeof(MoveCommand), 1)]
+        public void String_MapsTo_RotateCommands(string command, Type rotateType, int actualCount)
         {
             //Arrange
-            StringCommandParser parser = new StringCommandParser("L");
+            StringCommandParser parser = new StringCommandParser(command);
 
             //Expected
             List<ICommand> commands = parser.ToCommands();
 
             //Actual
-            commands.ElementAt(0).GetType().Should().Be(typeof(RotateLeftCommand));
-            commands.Count().Should().Be(1);
+            commands.ElementAt(0).GetType().Should().Be(rotateType);
+            commands.Count().Should().Be(actualCount);
         }
-        [Fact]
-        public void String_RMapsTo_RotateRightCommand()
+        [Theory]
+        [InlineData("", 0)]
+        [InlineData(null, 0)]
+        public void NullOrEmptyString_Results_CommandList(string command, int actualCount)
         {
             //Arrange
-            StringCommandParser parser = new StringCommandParser("R");
+            StringCommandParser parser = new StringCommandParser(command);
 
             //Expected
             List<ICommand> commands = parser.ToCommands();
 
             //Actual
-            commands.ElementAt(0).GetType().Should().Be(typeof(RotateRightCommand));
-            commands.Count().Should().Be(1);
-        }
-        [Fact]
-        public void String_MMapsTo_MoveCommand()
-        {
-            //Arrange
-            StringCommandParser parser = new StringCommandParser("M");
+            commands.Count().Should().Be(actualCount);
 
-            //Expected
-            List<ICommand> commands = parser.ToCommands();
-
-            //Actual
-            commands.ElementAt(0).GetType().Should().Be(typeof(MoveCommand));
-            commands.Count().Should().Be(1);
-        }
-        [Fact]
-        public void EmptyStringResults_InEmpty_CommandList()
-        {
-            //Arrange
-            StringCommandParser parser = new StringCommandParser("");
-
-            //Expected
-            List<ICommand> commands = parser.ToCommands();
-
-            //Actual
-            commands.Count().Should().Be(0);
-
-        }
-
-
-        [Fact]
-        public void NullStringResults_InEmptyCommandList()
-        {
-            //Arrange
-            StringCommandParser parser = new StringCommandParser(null);
-
-            //Expected
-            List<ICommand> commands = parser.ToCommands();
-
-            //Actual
-            commands.Count().Should().Be(0);
         }
 
         [Fact]

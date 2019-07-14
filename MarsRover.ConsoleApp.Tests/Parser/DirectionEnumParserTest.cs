@@ -10,22 +10,14 @@ namespace MarsRover.ConsoleApp.Tests.Parser
 {
     public class DirectionEnumParserTest
     {
-        [Fact]
-        public void Create_Direction_From_EnumType()
+        [Theory]
+        [InlineData(DirectionEnum.East,"E")]
+        [InlineData(DirectionEnum.West,"W")]
+        [InlineData(DirectionEnum.South,"S")]
+        [InlineData(DirectionEnum.North,"N")]
+        public void Create_Direction_From_EnumType(DirectionEnum directionEnum,string actual)
         {
-            var direction = DirectionEnum.East.ToDirection();
-
-            direction.Rotation().Should().Be("E");
-
-            direction = DirectionEnum.North.ToDirection();
-
-            direction.Rotation().Should().Be("N");
-
-            direction = DirectionEnum.South.ToDirection();
-
-            direction.Rotation().Should().Be("S");
-
-            direction = DirectionEnum.West.ToDirection();
+            directionEnum.ToDirection().Rotation().Should().Be(actual);
         }
     }
 }

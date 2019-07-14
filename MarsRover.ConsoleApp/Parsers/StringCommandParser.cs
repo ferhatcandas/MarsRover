@@ -12,7 +12,7 @@ namespace MarsRover.ConsoleApp.Parsers
         public string CommandString { get; set; }
         public StringCommandParser(string commandString)
         {
-            CommandString = commandString;
+            CommandString = commandString ?? "";
             SetCommands();
         }
 
@@ -25,15 +25,18 @@ namespace MarsRover.ConsoleApp.Parsers
         private List<ICommand> BuildCommandsList(string commandString)
         {
             List<ICommand> commands = new List<ICommand>();
-
-            string[] commandChars = CommandCharactersFrom(commandString);
-
-            foreach (string commandCharacter in commandChars)
+            if (CommandString != null)
             {
-                if (commandCharacter == null) break;
-                ICommand mappedCommand = LookupEquivalentCommand(commandCharacter.ToUpper());
-                commands.Add(mappedCommand);
+                string[] commandChars = CommandCharactersFrom(commandString);
+
+                foreach (string commandCharacter in commandChars)
+                {
+                    if (commandCharacter == null) break;
+                    ICommand mappedCommand = LookupEquivalentCommand(commandCharacter.ToUpper());
+                    commands.Add(mappedCommand);
+                }
             }
+
             return commands;
         }
         private string[] CommandCharactersFrom(string commandString)
