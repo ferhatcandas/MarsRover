@@ -56,7 +56,7 @@ namespace MarsRover.ConsoleApp
     }
     public class MarsRoverTwo : Rover
     {
-        public MarsRoverTwo() : base(new PlateauObject(), DirectionEnum.North, new CoortinateObjectForRoverTwo())
+        public MarsRoverTwo() : base(new PlateauObject(), DirectionEnum.East, new CoortinateObjectForRoverTwo())
         {
         }
     }
